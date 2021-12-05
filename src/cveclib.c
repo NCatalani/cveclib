@@ -68,6 +68,7 @@ int cvecSearch(Cvec cv, void *data, int(*compare)(const void *, const void *)) {
 	upper_limit	=	cv->size - 1;
 
 	while (lower_limit <= upper_limit) {
+        // Bitwise operator used to get floor from division by two.
 		middle	=	lower_limit	+	((upper_limit - lower_limit) >> 1);
 		cmp		=	compare(data, cv->data[middle]);
 
@@ -84,4 +85,3 @@ int cvecSearch(Cvec cv, void *data, int(*compare)(const void *, const void *)) {
 
 	return middle;
 }
-
