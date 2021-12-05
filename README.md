@@ -1,4 +1,4 @@
-# cveclib - Simple [C] generic array library
+# cveclib v0.01 - Simple [C] generic array library
 
 ### Compiling from source (requires gcc and make)
 
