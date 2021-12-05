@@ -8,13 +8,14 @@ VERSION=$(cat README.md | head -n 1 | egrep -o -e '[0-9]{1}.[0-9]*')
 
 [ -n "$1" ] && RELEASE="Y"
 
-/usr/bin/make clean     &&
-/usr/bin/make
+make clean && make
 
 [[ "$RELEASE" != "Y" ]] && exit 0
 
 OUTPUT="${OUTPUT_DIR}/libcvec_v${VERSION}.tar.gz"
 
 mkdir output/ 2>/dev/null
+rm -rf ${OUTPUT} 2>/dev/null
 
 tar -czvf ${OUTPUT} ${LIB_DIR}
+
