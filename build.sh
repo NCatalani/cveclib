@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LIBNAME=libcvec.a
-OUTPUT_DIR=output
+OUTPUT_DIR=out
 LIB_DIR=out
 RELEASE=""
 VERSION=$(cat README.md | head -n 1 | egrep -o -e '[0-9]{1}.[0-9]*')
@@ -14,7 +14,7 @@ make clean && make
 
 OUTPUT="${OUTPUT_DIR}/libcvec_v${VERSION}.tar.gz"
 
-mkdir output/ 2>/dev/null
+mkdir ${OUTPUT_DIR} 2>/dev/null
 rm -rf ${OUTPUT} 2>/dev/null
 
 tar -czvf ${OUTPUT} ${LIB_DIR}
